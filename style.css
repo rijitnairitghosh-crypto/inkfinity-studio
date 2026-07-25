@@ -1,22 +1,106 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: white;
-    text-align: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-h1 {
-    color: cyan;
-    margin-top: 80px;
+body{
+    font-family:Arial,sans-serif;
+    background:#000;
+    color:#fff;
 }
 
-button {
-    background: #ff6600;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 18px;
-    border-radius: 8px;
-    cursor: pointer;
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 50px;
+    background:#111;
+    position:sticky;
+    top:0;
 }
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+    color:#00e5ff;
+}
+
+nav a{
+    color:#fff;
+    text-decoration:none;
+    margin-left:20px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#00e5ff;
+}
+
+.hero{
+    text-align:center;
+    padding:100px 20px;
+    background:linear-gradient(135deg,#000,#1a1a1a);
+}
+
+.hero h1{
+    font-size:52px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    color:#bbb;
+    margin-bottom:30px;
+}
+
+button{
+    background:#00e5ff;
+    color:#000;
+    border:none;
+    padding:15px 35px;
+    font-size:18px;
+    border-radius:30px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+button:hover{
+    background:#00b8d4;
+}
+
+.categories{
+    padding:60px 30px;
+}
+
+.categories h2{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#111;
+    padding:40px;
+    text-align:center;
+    border-radius:15px;
+    border:1px solid #222;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#00e5ff;
+}
+
+footer{
+    background:#111;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+                                 }
