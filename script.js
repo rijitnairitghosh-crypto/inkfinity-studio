@@ -14,35 +14,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     cards.forEach(card => {
 
-        card.addEventListener("click", function () {
+    card.addEventListener("click", function () {
 
-            const text = card.textContent.trim();
+        const text = card.textContent.trim();
 
-            if (text.includes("Tote Bags")) {
-                window.location.href = "tote-bag.html";
-            }
+        if (text.includes("T-Shirts")) {
+            window.location.href = "tshirt.html";
+        }
 
-            else if (text.includes("T-Shirts")) {
-                alert("T-Shirts page will be added soon!");
-            }
+        else if (text.includes("Hoodies")) {
+            window.location.href = "hoodie.html";
+        }
 
-            else if (text.includes("Hoodies")) {
-                alert("Hoodies page will be added soon!");
-            }
+        else if (text.includes("Mugs")) {
+            window.location.href = "mug.html";
+        }
 
-            else if (text.includes("Mugs")) {
-                alert("Mugs page will be added soon!");
-            }
+        else if (text.includes("Phone Cases")) {
+            window.location.href = "phone-case.html";
+        }
 
-            else if (text.includes("Phone Cases")) {
-                alert("Phone Cases page will be added soon!");
-            }
+        else if (text.includes("Tote Bags")) {
+            window.location.href = "tote-bag.html";
+        }
 
-            else if (text.includes("Caps")) {
-                alert("Caps page will be added soon!");
-            }
-
-        });
+        else if (text.includes("Caps")) {
+            window.location.href = "cap.html";
+        }
 
     });
 
