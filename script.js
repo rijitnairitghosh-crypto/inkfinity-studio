@@ -83,3 +83,22 @@ function addToWishlist(product, price) {
 function addToWishlist(product, price) {
     // wishlist code
 }
+function searchProducts() {
+
+    let input = document.getElementById("searchInput").value.toLowerCase();
+
+    let products = document.querySelectorAll(".product-card");
+
+    products.forEach(function(product) {
+
+        let text = product.innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            product.style.display = "";
+        } else {
+            product.style.display = "none";
+        }
+
+    });
+
+                }
