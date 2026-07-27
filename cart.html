@@ -1,39 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart | INKFINITY STUDIO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">♾️ INKFINITY STUDIO</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="cart.html">🛒 Cart</a>
+</nav>
+</header>
+
 <h1>🛒 Shopping Cart</h1>
 
 <div class="cart-item">
-  <h2>Products Added</h2>
+    <h2>Products Added</h2>
 
-<p id="product"></p>
-<p id="price"></p>
+    <div id="product"></div>
 
-  <hr>
+    <hr>
 
-  <h3 id="total"></h3>
+    <h2 id="total"></h2>
 </div>
 
+<br>
+
 <a href="checkout.html">
-  <button>Proceed to Checkout</button>
+<button>Proceed to Checkout</button>
 </a>
 
 <br><br>
 
 <a href="shop.html">
-  <button>Continue Shopping</button>
+<button>Continue Shopping</button>
 </a>
 
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 function displayCart() {
+
     let html = "";
     let total = 0;
 
     cart.forEach((item, index) => {
+
         html += `
-        <div style="border:1px solid #ddd; padding:15px; margin-bottom:15px; border-radius:10px;">
+        <div style="border:1px solid #ddd;padding:15px;margin-bottom:15px;border-radius:10px;">
+
             <h3>${item.product}</h3>
 
-            <p>Price: ₹${item.price}</p>
+            <p><strong>Price:</strong> ₹${item.price}</p>
 
             <button onclick="decreaseQuantity(${index})">➖</button>
 
@@ -44,15 +72,16 @@ function displayCart() {
             <br><br>
 
             <button onclick="removeItem(${index})">🗑️ Remove</button>
+
         </div>
         `;
 
         total += item.price;
+
     });
 
     document.getElementById("product").innerHTML = html;
-    document.getElementById("price").innerHTML = "";
-    document.getElementById("total").innerText = "Total: ₹" + total;
+    document.getElementById("total").innerHTML = "Total: ₹" + total;
 }
 
 function removeItem(index) {
@@ -62,12 +91,15 @@ function removeItem(index) {
 }
 
 function increaseQuantity(index) {
-    alert("Quantity feature will be added in the next step.");
+    alert("Quantity feature will be added in the next update.");
 }
 
 function decreaseQuantity(index) {
-    alert("Quantity feature will be added in the next step.");
+    alert("Quantity feature will be added in the next update.");
 }
 
 displayCart();
 </script>
+
+</body>
+</html>
