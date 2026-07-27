@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wishlist | INKFINITY STUDIO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">♾️ INKFINITY STUDIO</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="shop.html">Shop</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="cart.html">🛒 Cart</a>
+<a href="wishlist.html">❤️ Wishlist</a>
+</nav>
+</header>
+
+<h1>❤️ My Wishlist</h1>
+
+<div id="wishlist"></div>
+
+<br>
+
+<a href="shop.html">
+<button>Continue Shopping</button>
+</a>
+
+<script>
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+function displayWishlist() {
+
+    let html = "";
+
+    if (wishlist.length === 0) {
+        html = "<h2>Your Wishlist is Empty ❤️</h2>";
+    }
+
+    wishlist.forEach((item, index) => {
+
+        html += `
+        <div style="border:1px solid #ddd;padding:15px;margin-bottom:15px;border-radius:10px;">
+
+            <h3>${item.product}</h3>
+
+            <p><strong>Price:</strong> ₹${item.price}</p>
+
+            <button onclick="moveToCart(${index})">🛒 Move to Cart</button>
+
+            <button onclick="removeWishlist(${index})">🗑️ Remove</button>
+
+        </div>
+        `;
+    });
+
+    document.getElementById("wishlist").innerHTML = html;
+}
+
+function removeWishlist(index) {
+    wishlist.splice(index,1);
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+    displayWishlist();
+}
+
+function moveToCart(index) {
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push(wishlist[index]);
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    wishlist.splice(index,1);
+
+    localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+    displayWishlist();
+
+    alert("Product moved to Cart 🛒");
+}
+
+displayWishlist();
+</script>
+
+</body>
+</html>
