@@ -102,3 +102,25 @@ function searchProducts() {
     });
 
                 }
+function addReview() {
+
+    let name = document.getElementById("reviewName").value;
+    let review = document.getElementById("reviewText").value;
+
+    if (name === "" || review === "") {
+        alert("Please enter your name and review.");
+        return;
+    }
+
+    document.getElementById("reviews").innerHTML += `
+        <div class="review">
+            <h3>${name} ⭐⭐⭐⭐⭐</h3>
+            <p>${review}</p>
+        </div>
+    `;
+
+    document.getElementById("reviewName").value = "";
+    document.getElementById("reviewText").value = "";
+
+    alert("Thank you for your review!");
+                    }
