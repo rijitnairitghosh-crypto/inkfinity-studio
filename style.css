@@ -143,11 +143,24 @@ color:#00e5ff;
     font-size:16px;
 }
 .review{
-    background:#f8f8f8;
+    background:#ffffff;
+    color:#000000;
     border:1px solid #ddd;
     border-radius:10px;
     padding:15px;
-    margin:15px;
+    margin:15px 0;
+}
+
+.review h3{
+    color:#000000;
+}
+
+.review p{
+    color:#333333;
+}
+
+#reviews{
+    color:#000000;
 }
 
 #reviewName,
