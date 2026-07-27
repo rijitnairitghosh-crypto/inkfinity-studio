@@ -24,15 +24,15 @@
 <script>
 const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-let productHTML = "";
+let html = "";
 let total = 0;
 
 cart.forEach(item => {
-    productHTML += `<p>${item.product} - ₹${item.price}</p>`;
+    html += `<p>${item.product} - ₹${item.price}</p>`;
     total += item.price;
 });
 
-document.getElementById("product").innerHTML = productHTML;
+document.getElementById("product").innerHTML = html;
 document.getElementById("price").innerHTML = "";
 document.getElementById("total").innerText = "Total: ₹" + total;
 </script>
