@@ -48,7 +48,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 function addToCart(product, price) {
-    localStorage.setItem("cartProduct", product);
-    localStorage.setItem("cartPrice", price);
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    cart.push({
+        product: product,
+        price: price
+    });
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
     window.location.href = "cart.html";
-}
+        }
