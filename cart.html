@@ -22,17 +22,32 @@
 </a>
 
 <script>
-const cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-let html = "";
-let total = 0;
+function displayCart() {
+    let html = "";
+    let total = 0;
 
-cart.forEach(item => {
-    html += `<p>${item.product} - ₹${item.price}</p>`;
-    total += item.price;
-});
+    cart.forEach((item, index) => {
+        html += `
+            <p>
+                ${item.product} - ₹${item.price}
+                <button onclick="removeItem(${index})">❌ Remove</button>
+            </p>
+        `;
+        total += item.price;
+    });
 
-document.getElementById("product").innerHTML = html;
-document.getElementById("price").innerHTML = "";
-document.getElementById("total").innerText = "Total: ₹" + total;
+    document.getElementById("product").innerHTML = html;
+    document.getElementById("price").innerHTML = "";
+    document.getElementById("total").innerText = "Total: ₹" + total;
+}
+
+function removeItem(index) {
+    cart.splice(index, 1);
+    localStorage.setItem("cart", JSON.stringify(cart));
+    displayCart();
+}
+
+displayCart();
 </script>
