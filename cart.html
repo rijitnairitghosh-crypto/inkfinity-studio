@@ -23,6 +23,7 @@
 
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
 function displayCart() {
     let html = "";
     let total = 0;
@@ -53,12 +54,19 @@ function displayCart() {
     document.getElementById("price").innerHTML = "";
     document.getElementById("total").innerText = "Total: ₹" + total;
 }
-}
 
 function removeItem(index) {
     cart.splice(index, 1);
     localStorage.setItem("cart", JSON.stringify(cart));
     displayCart();
+}
+
+function increaseQuantity(index) {
+    alert("Quantity feature will be added in the next step.");
+}
+
+function decreaseQuantity(index) {
+    alert("Quantity feature will be added in the next step.");
 }
 
 displayCart();
