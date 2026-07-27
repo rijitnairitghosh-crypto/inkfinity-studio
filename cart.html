@@ -8,7 +8,7 @@
 
   <hr>
 
-  <h3>Total: ₹600</h3>
+  <h3 id="total"></h3>
 </div>
 
 <a href="checkout.html">
@@ -20,3 +20,13 @@
 <a href="shop.html">
   <button>Continue Shopping</button>
 </a>
+<script>
+document.getElementById("product").innerText =
+    localStorage.getItem("cartProduct");
+
+document.getElementById("price").innerText =
+    "Price: ₹" + localStorage.getItem("cartPrice");
+</script>
+
+</body>
+</html>
