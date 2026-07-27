@@ -158,3 +158,23 @@ color:#00e5ff;
     border-radius:8px;
     border:1px solid #ccc;
     }
+.instagram-chat{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #E1306C;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.instagram-chat:hover{
+    background: #C13584;
+    transform: scale(1.05);
+}
