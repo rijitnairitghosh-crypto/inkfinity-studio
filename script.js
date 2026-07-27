@@ -60,3 +60,23 @@ function addToCart(product, price) {
 
     window.location.href = "cart.html";
         }
+function addToWishlist(product, price) {
+
+    let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+    let exists = wishlist.find(item => item.product === product);
+
+    if (!exists) {
+        wishlist.push({
+            product: product,
+            price: price
+        });
+
+        localStorage.setItem("wishlist", JSON.stringify(wishlist));
+        alert(product + " added to Wishlist ❤️");
+    } else {
+        alert(product + " is already in your Wishlist ❤️");
+    }
+
+    window.location.href = "wishlist.html";
+    }
