@@ -47,3 +47,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+function addToCart(product, price) {
+    localStorage.setItem("cartProduct", product);
+    localStorage.setItem("cartPrice", price);
+    window.location.href = "cart.html";
+}
