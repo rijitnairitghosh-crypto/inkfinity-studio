@@ -23,24 +23,36 @@
 
 <script>
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
 function displayCart() {
     let html = "";
     let total = 0;
 
     cart.forEach((item, index) => {
         html += `
-            <p>
-                ${item.product} - ₹${item.price}
-                <button onclick="removeItem(${index})">❌ Remove</button>
-            </p>
+        <div style="border:1px solid #ddd; padding:15px; margin-bottom:15px; border-radius:10px;">
+            <h3>${item.product}</h3>
+
+            <p>Price: ₹${item.price}</p>
+
+            <button onclick="decreaseQuantity(${index})">➖</button>
+
+            <span style="margin:0 10px;">1</span>
+
+            <button onclick="increaseQuantity(${index})">➕</button>
+
+            <br><br>
+
+            <button onclick="removeItem(${index})">🗑️ Remove</button>
+        </div>
         `;
+
         total += item.price;
     });
 
     document.getElementById("product").innerHTML = html;
     document.getElementById("price").innerHTML = "";
     document.getElementById("total").innerText = "Total: ₹" + total;
+}
 }
 
 function removeItem(index) {
