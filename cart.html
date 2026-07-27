@@ -20,21 +20,19 @@
 <a href="shop.html">
   <button>Continue Shopping</button>
 </a>
+
 <script>
-document.getElementById("product").innerText =
-    localStorage.getItem("cartProduct");
+const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-document.getElementById("price").innerText =
-    "Price: ₹" + localStorage.getItem("cartPrice");
+let productHTML = "";
+let total = 0;
+
+cart.forEach(item => {
+    productHTML += `<p>${item.product} - ₹${item.price}</p>`;
+    total += item.price;
+});
+
+document.getElementById("product").innerHTML = productHTML;
+document.getElementById("price").innerHTML = "";
+document.getElementById("total").innerText = "Total: ₹" + total;
 </script>
-<script>
-const product = localStorage.getItem("cartProduct");
-const price = localStorage.getItem("cartPrice");
-
-document.getElementById("product").innerText = product;
-document.getElementById("price").innerText = "Price: ₹" + price;
-document.getElementById("total").innerText = "Total: ₹" + price;
-</script>
-</body>
-
-</html>
