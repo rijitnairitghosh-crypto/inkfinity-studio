@@ -80,3 +80,6 @@ function addToWishlist(product, price) {
 
     window.location.href = "wishlist.html";
     }
+function addToWishlist(product, price) {
+    // wishlist code
+}
