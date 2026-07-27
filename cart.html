@@ -27,6 +27,14 @@ document.getElementById("product").innerText =
 document.getElementById("price").innerText =
     "Price: ₹" + localStorage.getItem("cartPrice");
 </script>
+<script>
+const product = localStorage.getItem("cartProduct");
+const price = localStorage.getItem("cartPrice");
 
+document.getElementById("product").innerText = product;
+document.getElementById("price").innerText = "Price: ₹" + price;
+document.getElementById("total").innerText = "Total: ₹" + price;
+</script>
 </body>
+
 </html>
