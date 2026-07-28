@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track Order | INKFINITY STUDIO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">♾️ INKFINITY STUDIO</div>
+</header>
+
+<h1>📦 Track Your Order</h1>
+
+<p>Enter your Order ID below.</p>
+
+<input type="text" id="orderId" placeholder="Example: INK12345">
+
+<br><br>
+
+<button onclick="trackOrder()">Track Order</button>
+
+<div id="result" style="margin-top:20px;"></div>
+
+<script>
+function trackOrder() {
+
+    let id = document.getElementById("orderId").value.trim();
+
+    if(id === ""){
+        alert("Please enter your Order ID.");
+        return;
+    }
+
+    document.getElementById("result").innerHTML = `
+        <h3>Order ID: ${id}</h3>
+        <p>📦 Status: Processing</p>
+        <p>🚚 Estimated Delivery: 5–7 Business Days</p>
+    `;
+}
+</script>
+
+</body>
+</html>
