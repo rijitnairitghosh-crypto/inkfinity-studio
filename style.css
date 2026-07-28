@@ -191,3 +191,20 @@ color:#00e5ff;
     background: #C13584;
     transform: scale(1.05);
 }
+.top-links{
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+.top-links a{
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.top-links a:hover{
+    text-decoration: underline;
+}
