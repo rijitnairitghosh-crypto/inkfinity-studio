@@ -1,0 +1,38 @@
+<hr>
+
+<h2>💬 Ask Us Anything</h2>
+
+<input type="text" id="customerName" placeholder="Your Name">
+
+<br><br>
+
+<textarea id="customerQuestion" rows="5" cols="40" placeholder="Type your question here..."></textarea>
+
+<br><br>
+
+<button onclick="sendToInstagram()">📷 Send on Instagram</button>
+
+<script>
+function sendToInstagram() {
+
+    let name = document.getElementById("customerName").value.trim();
+    let question = document.getElementById("customerQuestion").value.trim();
+
+    if(name === "" || question === ""){
+        alert("Please enter your name and question.");
+        return;
+    }
+
+    alert(
+        "Your message is ready!\n\n" +
+        "Name: " + name +
+        "\nQuestion: " + question +
+        "\n\nClick OK to open our Instagram and send us a DM."
+    );
+
+    window.open(
+        "https://www.instagram.com/ink_finity_studio_020191?igsh=YTI3NmRncGc5bm1i",
+        "_blank"
+    );
+}
+</script>
