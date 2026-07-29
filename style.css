@@ -273,3 +273,50 @@ color:#00e5ff;
     cursor:pointer;
     font-size:16px;
 }
+@media (max-width:768px){
+
+header{
+    flex-direction:column;
+    align-items:center;
+}
+
+nav{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    text-align:center;
+    width:100%;
+}
+
+nav a{
+    font-size:16px;
+}
+
+.logo{
+    margin-bottom:15px;
+}
+
+}
+
+/* Featured Products */
+.featured-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+}
+
+.featured-card{
+    width:280px;
+    max-width:90%;
+}
+
+/* Instagram Button */
+.instagram-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    z-index:999;
+    width:auto;
+    max-width:220px;
+}
