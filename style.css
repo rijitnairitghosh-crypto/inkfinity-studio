@@ -242,3 +242,22 @@ color:#00e5ff;
 .contact-banner button:hover{
     background:#C13584;
 }
+.why-us{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.why-grid{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+
+.why-card{
+    width:220px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.15);
+}
