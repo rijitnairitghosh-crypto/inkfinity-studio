@@ -124,3 +124,14 @@ function addReview() {
 
     alert("Thank you for your review!");
                     }
+function shareStore() {
+    if (navigator.share) {
+        navigator.share({
+            title: "INKFINITY STUDIO",
+            text: "Check out this amazing Print-on-Demand Store!",
+            url: "https://rijitnairitghosh-crypto.github.io/inkfinity-studio/"
+        });
+    } else {
+        alert("Sharing is not supported on this device.");
+    }
+}
